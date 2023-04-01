@@ -1,0 +1,13 @@
+services:
+  http-server:
+    build:
+      dockerfile: docker/Dockerfile
+      args:
+        APP_ENV: ${APP_ENV}
+        SERVICE_NAME: httpServer
+    image: damo-http-server:latest
+    container_name: http-server
+    restart: always
+    environment:
+      APP_ENV: ${APP_ENV}
+      HTTP_SERVER_PORT: ${HTTP_SERVER_PORT}
